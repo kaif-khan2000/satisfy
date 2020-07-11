@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Home-Sastisfy
+{% endblock title %}
+
+{% block body %}
+
+<div class="container my-3">
+    {% for song in songs %}
+    <div class="card my-1">
+        <div class="card-body">
+            <h5 class="card-title">{{song.name}}</h5>
+            <p class="card-text">{{song.artist}}</p>
+            <i class="fas fa-play playpause{{song.id}}" id="playpause{{song.id}}" onclick="play({{song.id}},'{{song.name}}','{{song.artist}}')"></i>
+            <audio src="{{song.song_file}}" id="audio{{song.id}}"></audio>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+<div class="fixed-bottom" id="bottom">
+    
+</div>
+
+{% endblock body %}
+
+{% block js %}
+
+<script type="text/javascript" src="static/js/music_functions.js"></script>
+{% endblock js %}
