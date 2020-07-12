@@ -10,7 +10,8 @@
         <div class="card-body">
             <h5 class="card-title">{{song.name}}</h5>
             <p class="card-text">{{song.artist}}</p>
-            <i class="fas fa-play playpause{{song.id}}" id="playpause{{song.id}}" onclick="play({{song.id}},'{{song.name}}','{{song.artist}}')"></i>
+            <i class="fas fa-play playpause{{song.id}}" id="playpause_id{{song.id}}"
+                onclick="load({{song.id}},'{{song.name}}','{{song.artist}}')"></i>
             <audio src="{{song.song_file}}" id="audio{{song.id}}"></audio>
         </div>
     </div>
